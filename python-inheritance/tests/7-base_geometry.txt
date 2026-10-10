@@ -3,6 +3,9 @@ BaseGeometry class
 
 Usage import:
 
+    >>> import sys
+    >>> mod_name = sys.argv[0].split('/')[-1].split('.')[0] if len(sys.argv) > 0 else '7-base_geometry'
+    >>> # Alternativ olaraq birbaşa cari modul adını yoxlayaq:
     >>> BaseGeometry = __import__('7-base_geometry').BaseGeometry
 
 Testing instance creation and dir:
