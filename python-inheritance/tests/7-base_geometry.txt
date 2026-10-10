@@ -4,9 +4,12 @@ BaseGeometry class
 Usage import:
 
     >>> import sys
-    >>> mod_name = [f for f in sys.modules.keys() if 'base_geometry' in f][0] if [f for f in sys.modules.keys() if 'base_geometry' in f] else '7-base_geometry'
-    >>> # Alternativ olaraq birbaşa cari modulu yoxlayaq:
-    >>> BaseGeometry = __import__('7-base_geometry', globals(), locals(), ['BaseGeometry'], 0).BaseGeometry if '7-base_geometry' in sys.modules else __import__(mod_name).BaseGeometry
+    >>> # Platformanın yaratdığı dinamik modul adını tapırıq
+    >>> mod_name = [m for m in sys.modules.keys() if 'base_geometry' in m and m != '7-base_geometry'][0] if any('base_geometry' in m for m in sys.modules.keys() if m != '7-base_geometry') else '7-base_geometry'
+    >>> try:
+    ...     BaseGeometry = __import__(mod_name).BaseGeometry
+    ... except ImportError:
+    ...     BaseGeometry = __import__('7-base_geometry').BaseGeometry
 
 Testing instance creation and dir:
 
