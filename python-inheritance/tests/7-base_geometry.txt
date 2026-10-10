@@ -5,9 +5,17 @@ Usage import:
 
     >>> BaseGeometry = __import__('7-base_geometry').BaseGeometry
 
-Testing integer_validator:
+Testing area:
 
     >>> bg = BaseGeometry()
+    >>> try:
+    ...     bg.area()
+    ... except Exception as e:
+    ...     print("[{}] {}".format(e.__class__.__name__, e))
+    [Exception] area() is not implemented
+
+Testing integer_validator:
+
     >>> bg.integer_validator()
     Traceback (most recent call last):
         ...
