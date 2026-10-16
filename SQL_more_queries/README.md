@@ -1,3 +1,3 @@
 # SQL - More queries
 
-This project is part of the Holberton School curriculum, focusing on advanced SQL queries, multi-table joins, subqueries, and database privileges management (DCL).
+This project contains various tasks to practice advanced SQL queries, joins, subqueries, and database management in MySQL.
