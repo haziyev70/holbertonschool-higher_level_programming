@@ -1,6 +1,8 @@
 #!/usr/bin/python3
 """
-Python script that fetches https://intranet.hbtn.io/status using requests package.
+Python script that fetches
+https://intranet.hbtn.io/status
+using requests.
 """
 
 import requests
