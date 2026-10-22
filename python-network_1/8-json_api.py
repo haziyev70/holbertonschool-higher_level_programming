@@ -10,13 +10,14 @@ import requests
 if __name__ == "__main__":
     letter = sys.argv[1] if len(sys.argv) > 1 else ""
     payload = {'q': letter}
-    
     try:
-        response = requests.post('http://0.0.0.0:5000/search_user', data=payload)
+        url = 'http://0.0.0.0:5000/search_user'
+        response = requests.post(url, data=payload)
         json_response = response.json()
-        
         if json_response:
-            print(f"[{json_response.get('id')}] {json_response.get('name')}")
+            uid = json_response.get('id')
+            uname = json_response.get('name')
+            print(f"[{uid}] {uname}")
         else:
             print("No result")
     except ValueError:
